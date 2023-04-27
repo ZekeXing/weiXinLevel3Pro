@@ -1,0 +1,45 @@
+<view>
+  <text class="title">商品列表</text>
+  <view class="goods-list">
+    <!-- Loop through selected items and display their images, names, prices, and quantities -->
+    <block wx:for="{{cartList}}" wx:key="index">
+      <view class="goods-item">
+        <image class="goods-image" src="{{item.list_pic_url}}" mode="aspectFill"></image>
+        <view class="goods-info">
+          <text class="goods-name">{{item.name}}</text>
+          <text class="goods-price">￥{{item.retail_price}}元</text>
+          <text class="goods-quantity">x{{item.quantity}}</text>
+        </view>
+      </view>
+    </block>
+  </view>
+  <text class="subtitle">配送服务</text>
+  <view class="delivery-service">
+    <text>中小件送货时间：</text>
+    <picker mode="date" value="{{date}}" start="2023-04-27" end="2023-09-01" bindchange="bindDateChange">
+      <view class="picker">
+        配送日期: {{date}}
+      </view>
+    </picker>
+  </view>
+  <text class="subtitle">备注</text>
+  <view class="remark">
+    <input class="beizhu" placeholder=">选填：给商家备注（50字)" bindinput="inputHandler"></input>
+  </view>
+  <view class="order-summary">
+    <view class="order-summary-list">
+      <text class="moneyTit">商品总金额：</text>
+      <view class="moneyNum">￥{{goodsPrice}}</view>
+    </view>
+    <view>
+      <text class="moneyTit">运费：</text>
+      <view class="moneyNum">￥{{freight}}</view>
+    </view>
+    <view>
+      <text class="moneyTit">实际支付：</text>
+      <view class="moneyNum">￥{{totalPrice}}</view>
+    </view>
+
+  </view>
+  <button class="pay-button">微信支付</button>
+</view>

@@ -1,0 +1,80 @@
+/**index.wxss**/
+
+.swiper_style swiper{
+    width: 100%;
+    height: calc(750rpx*360/720);
+}
+.swiper_style swiper image{
+  width: 100%;
+}
+.home_goods_box{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 30rpx;
+}
+.goods_box{
+  width: 49%;
+  margin-bottom: 20rpx;
+}
+.goods_pic{
+  width: 220rpx;
+  height: 250rpx;
+  margin: 0 auto;
+  display: block;
+}
+.goods_name{
+font-size: 30rpx;
+font-weight: 600;
+text-align: center;
+}
+.goods_desc{
+font-size: 24rpx;
+margin-top: 10rpx;
+text-align: center;
+}
+.goods_row{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.goods_price{
+  font-size: 30rpx;
+  margin-top: 20rpx;
+  color: red;
+}
+.mytitle {
+  height: 80rpx;
+  background: #fff;
+  position: relative;
+}
+.mytitle .line {
+  width: 50%;
+  height: 4rpx;
+  background: #ccc;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+.mytitle .txt {
+  width: 36%;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  font-size: 36rpx;
+  background: #fff;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+.issue {
+  background: #fff;
+  padding-bottom: 20rpx;
+  margin-bottom: 20rpx;
+}

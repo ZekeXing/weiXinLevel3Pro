@@ -1,0 +1,120 @@
+/* Style the title */
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Style the goods list */
+.goods-list {
+  margin-bottom: 20px;
+}
+
+/* Style the goods item */
+.goods-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+/* Style the goods image */
+.goods-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.goods-image {
+  width: 80px;
+  height: 80px;
+  margin-right: 10px;
+}
+
+.goods-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.goods-name {
+  font-weight: bold;
+}
+
+.goods-price {
+  color: red;
+}
+
+.goods-quantity {
+  margin-left: auto;
+}
+
+/* Style the subtitle */
+.subtitle {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Style the delivery service */
+.delivery-service {
+  margin-bottom: 20px;
+}
+
+/* Style the remark */
+.remark {
+  margin-bottom: 20px;
+}
+.beizhu {
+  background-color: #f2f2f2;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  padding: 12px 20px;
+}
+/* Style the order summary */
+.order-summary {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+
+}
+.order-summary-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.moneyTit {
+  float: left;
+}
+
+.moneyNum {
+  float: right;
+  color: red;
+}
+
+/* Style the pay button */
+.pay-button {
+  display: block;
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  background-color: #f00;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.picker {
+  font-size: 16px;
+  color: #333;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}

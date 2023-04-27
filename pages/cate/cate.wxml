@@ -1,0 +1,31 @@
+<!-- <button plain bindtap="startAuth" type="warn">开始生物认证</button> -->
+<view class="all-box">
+  <scroll-view class="nav" scroll-y>
+    <block wx:for="{{per}}" wx:key="index">
+      <view class="nav-item" wx:if="{{index == active}}">
+        <text class="nav-text">{{item}}</text>
+      </view>
+      <view class="nav-item" wx:else bindtap="changeNav" data-index="{{index}}">
+        <text class="nav-text">{{item}}</text>
+      </view>
+    </block>
+  </scroll-view>
+  <view class="home_goods_box">
+    <block wx:for="{{selector}}" wx:key="id">
+      <view class="goods_box" data-cart="{{item}}" bindtap="btnJumpDetail">
+        <image src="{{item.image}}" class="goods_pic" />
+        <view class="goods_name">
+          {{item.title}}
+        </view>
+        <view class="goods_desc">
+          {{item.titleTwo}}
+        </view>
+        <view class="goods_row">
+          <view class="goods_price">
+            {{item.price}}
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

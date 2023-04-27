@@ -1,0 +1,27 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+@import"pages/utils/common.wxss";
+.middle-p{
+  font-size: 20px;
+}
+
+page{
+  /**定义小程序的主题颜色*/
+  --theme-color: #e93b3d;
+
+  /*--button-primary-color:#e93b3d;
+  --button-primary-background-color: #69c;
+  --button-primary-border-color:#333;*/
+  /**定义小程序所有的页面字体，字号以及文本颜色*/
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  
+  
+}

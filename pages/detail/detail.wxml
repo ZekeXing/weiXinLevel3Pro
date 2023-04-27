@@ -1,0 +1,85 @@
+<!--pages/detail/detail.wxml-->
+<!--<text>pages/detail/detail.wxml</text>
+<navigator open-type="navigateBack" delta="1">
+返回上一页</navigator>
+<van-button>vant按钮</van-button>-->
+<swiper indicator-dots="{{true}}" indicator-active-color="darkred">
+  <swiper-item wx:for="{{gallery}}" wx:key="id">
+    <image src="{{item.img_url}}"></image>
+  </swiper-item>
+</swiper>
+<tipsbar />
+
+<wxs src="../utils/price.wxs" module="price" />
+<view class="info">
+  <view class="title">
+    {{info.name}}
+  </view>
+  <view class="desc">
+    {{info.goods_brief}}
+  </view>
+  <view class="price">
+    {{price.RMBFormat(info.retail_price)}}
+  </view>
+</view>
+<van-cell is-link title="已选" bindtap="onShowPopup" />
+<view class="canshu">
+  <view class="title"> 规格参数 </view>
+
+  <view class="ul">
+    <view class="li" wx:for="{{attribute}}" wx:key="index">
+      <view class="span">
+        {{item.name}}
+      </view>
+      <view class="strong">
+        {{item.value}}
+      </view>
+    </view>
+  </view>
+</view>
+<!--使用富文本组件-->
+<rich-text nodes="{{info.goods_desc}}" />
+<import src="./template/title.wxml" />
+<view class="issue">
+  <template is="mytitle" data="{{content:'常见问题'}}" />
+  <view class="list">
+    <view class="block" wx:for="{{issue}}" wx:key="index">
+      <view class="question">
+        {{item.question}}
+      </view>
+      <view class="answer">
+        {{item.answer}}
+      </view>
+    </view>
+  </view>
+</view>
+
+<van-goods-action>
+  <van-goods-action-icon icon-class="{{isCollected?'icon-color':' '}}" text-class="{{isCollected?'text-color':''}}" icon="{{isCollected?'star':'star-o'}}" text="{{isCollected?'已收藏':'收藏'}}" bindtap="collectTap" />
+  <van-goods-action-icon icon="cart-o" text="购物车" info="{{stepNum}}" bindtap="goCart" />
+  <van-goods-action-button bindtap="addToCart" text="加入购物车" type="warning" />
+  <van-goods-action-button bindtap="Buy" text="立即购买" />
+</van-goods-action>
+<van-popup show="{{ isShowed }}" position="bottom" custom-style="height: 540rpx;" bind:close="onClosePopup">
+  <view class="pupop">
+    <view class="top">
+      <image class="pupop-img" src="{{info.list_pic_url}}" mode="widthFix" />
+      <view class="right">
+        <view>
+          价格： {{price.RMBFormat(info.retail_price)}}
+        </view>
+        <view>
+          库存： {{info.goods_number + info.goods_unit}}
+        </view>
+      </view>
+    </view>
+    <view class="bottom">
+      <view class="type">
+        数量：
+      </view>
+      <van-stepper value="{{ stepNum }}" min="1" max="{{info.goods_number}}" bind:change="onStepperChange" />
+    </view>
+    <button class="buyNow" wx:if="{{bying}}">立即购买</button>
+  </view>
+
+</van-popup>

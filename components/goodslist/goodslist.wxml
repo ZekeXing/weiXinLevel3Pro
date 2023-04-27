@@ -1,0 +1,9 @@
+<view class="goods-list">
+  <view class="item" wx:for="{{goodsList}}" wx:key="index" bindtap="goDetail" id="{{item.id}}">
+    <image src="{{item.list_pic_url}}"></image>
+    <view class="title">{{item.name}}</view>
+    <view class="price">{{price.RMBFormat(item.retail_price)}}</view>
+  </view>
+</view>
+
+<wxs src="/pages/utils/price.wxs" module="price" />

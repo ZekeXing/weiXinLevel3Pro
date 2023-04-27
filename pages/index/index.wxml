@@ -1,0 +1,20 @@
+<view class="all">
+  <view class="swiper_style">
+    <swiper autoplay circulae indicator-dotsinterval="2000" indicator-color="#0094ff" indicator-color="#FFF0094">
+      <swiper-item wx:for="{{banner}}" wx:key="index">
+        <image src="{{item.image_url}}" mode="widthFix" />
+      </swiper-item>
+    </swiper>
+  </view>
+
+  <!--自定义组件引用：引用全局-->
+  <import src="./template/title.wxml" />
+  <view class="issue">
+    <template is="mytitle" data="{{content : '新品首发'}}"></template>
+    <goods-list goodsList="{{newGoodsList}}" />
+  </view>
+  <view class="issue">
+    <template is="mytitle" data="{{content : '新品推荐'}}"></template>
+    <goods-list goodsList="{{hotGoodsList}}" />
+  </view>
+</view>

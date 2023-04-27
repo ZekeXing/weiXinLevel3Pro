@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "tipsbar":"../../components/tipsbar/tipsbar",
+    "van-popup":"@vant/weapp/popup/index",
+    "van-cell":"@vant/weapp/cell/index",
+    "van-stepper":"@vant/weapp/stepper/index",
+    "van-goods-action": "@vant/weapp/goods-action/index",
+    "van-goods-action-icon": "@vant/weapp/goods-action-icon/index",
+    "van-goods-action-button": "@vant/weapp/goods-action-button/index" 
+  }
+}

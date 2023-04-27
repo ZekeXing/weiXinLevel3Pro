@@ -1,0 +1,25 @@
+<view class="cart">
+  <scroll-view class="cart-list" scroll-y="true">
+    <block wx:for="{{cartList}}" wx:key="id">
+      <view class="cart-item" wx:if="{{item.quantity>0}}">
+        <image class="item-img" src="{{item.list_pic_url}}" mode="aspectFill"></image>
+        <view class="item-info">
+          <view class="item-title">{{item.name}}</view>
+          <view class="item-price">¥{{item.retail_price}}</view>
+        </view>
+        <view class="item-count">
+          <button class="count-btn" bindtap="decreaseCount" data-id="{{item.id}}">-</button>
+          <view class="count">{{item.quantity}}</view>
+          <button class="count-btn" bindtap="increaseCount" data-id="{{item.id}}">+</button>
+        </view>
+      </view>
+    </block>
+  </scroll-view>
+  <!-- 结算栏 -->
+  <view class="cart-footer">
+    <view class="total-price">合计：¥{{totalPrice}} 元</view>
+    <!-- <button class="checkout-btn" bindtap="checkout">去结算</button> -->
+    <button class="checkout-btn" bindtap="reDown">刷新</button>
+    <button class="checkout-btn" bindtap="settlement">去结算</button>
+  </view>
+</view>

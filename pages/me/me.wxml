@@ -1,0 +1,37 @@
+<view class="user">
+  <view class="top">
+    <image class="image" mode="widthFix" src="{{avatar}}" />
+    <view style="display: flex;justify-content:space-between;flex: 1;align-items: center;">
+      <view class="go-to-login" bindtap="goLogin">
+        {{username}}
+      </view>
+      <van-icon class="icon" name="{{isLogined?'cross':'arrow'}}" bindtap="goLogout"></van-icon>
+    </view>
+  </view>
+
+  <view class="bottom">
+    <van-grid column-num="3" square>
+      <van-grid-item icon="{{item.icon}}" text="{{item.text}}" wx:for="{{ iconList }}" wx:key="index" />
+    </van-grid>
+  </view>
+</view>
+
+<van-popup style="position: relative;z-index: 999999;" show="{{ isLoginPopup }}" bind:close="onClose">
+  <van-cell-group>
+    <van-field label="用户名" placeholder="请输入用户名" error-message="{{username_error?'请输入用户名':''}}" bind:input="onInputUsername" />
+    <van-field type="password" label="密码" placeholder="请输入密码" error-message="{{userpass_error?'请输入密码':''}}" border="{{ false }}" bind:input="onInputPassword" />
+  </van-cell-group>
+  <van-button style="padding: 20rpx;" round block type="primary" bind:click="login">登录</van-button>
+</van-popup>
+
+<van-dialog
+  use-slot
+  title="确认框"
+  show="{{ isShowLogoutDialog }}"
+  show-cancel-button
+  bind:close="onClose"
+  bind:confirm="isLogoutOK"
+>
+<view style="text-align: center;margin: 20rpx;">
+  您确认要退出当前用户？</view>
+</van-dialog>

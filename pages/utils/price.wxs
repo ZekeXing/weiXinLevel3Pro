@@ -1,0 +1,7 @@
+function RMBFormat(value){
+  return "￥"+value.toFixed(2)+"元"
+}
+module.exports = {
+  RMBFormat:RMBFormat
+}
+//使用WXS脚本语言

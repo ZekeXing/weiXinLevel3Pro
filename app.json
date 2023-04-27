@@ -1,0 +1,87 @@
+{
+  "pages": [
+      "pages/index/index",
+      "pages/cate/cate",
+      "pages/cart/cart",
+      "pages/me/me",
+      "pages/detail/detail",
+      "pages/settlement/settlement"
+  ],
+  "subPackages": [
+    {
+      "root":"packageA",
+      "name":"pA",
+      "pages":[
+        "pages/dog/dog",
+        "pages/cat/cat"
+      ]
+    },
+    {
+      "root":"packageB",
+      "name":"pB",
+      "pages":[
+        "pages/apple/apple",
+        "pages/pear/pear"
+      ],
+      "independent": true
+    }
+  ],
+  "preloadRule": {
+   "pages/me/me":{
+     "network": "all",
+     "packages": [ "pB" ]
+   },
+   "pages/cate/cate":{
+    "network": "all",
+    "packages": [ "pA" ]
+  }
+  },
+  "window": {
+      "backgroundTextStyle": "dark",
+      "navigationBarBackgroundColor": "#FF69B4",
+      "navigationBarTitleText": "拼少少",
+      "navigationBarTextStyle": "black",
+      "enablePullDownRefresh": true
+      
+  },
+  "tabBar":{
+    "custom": true,
+    "borderStyle": "white",
+    "selectedColor": "#e93b3d",
+    "color": "#434343",
+    "backgroundColor": "",
+    
+    "list":[
+  {
+    "pagePath":"pages/index/index",
+    "text": "首页",
+    "iconPath": "pages/asset/icon/index.png",
+    "selectedIconPath": "pages/asset/icon/index-select.png"
+    },
+    {
+      "pagePath":"pages/cate/cate",
+      "text": "分类",
+      "iconPath": "pages/asset/icon/sort.png",
+      "selectedIconPath": "pages/asset/icon/sort-select.png"
+      },
+      {
+        "pagePath":"pages/cart/cart",
+        "text": "购物车",
+        "iconPath": "pages/asset/icon/cart.png",
+        "selectedIconPath": "pages/asset/icon/cart-select.png"
+        },
+        {
+          "pagePath":"pages/me/me",
+          "text": "我的",
+          "iconPath": "pages/asset/icon/me.png",
+          "selectedIconPath": "pages/asset/icon/me-select.png"
+          }
+  ]
+  },
+  "usingComponents": {
+    "van-button": "@vant/weapp/button/index",
+    "goods-list":"/components/goodslist/goodslist"
+  },
+  
+  "sitemapLocation": "sitemap.json"
+}
