@@ -1,5 +1,6 @@
 function RMBFormat(value){
-  return "￥"+value.toFixed(2)+"元"
+  var money = parseInt(value)
+  return "￥"+money.toFixed(2)+"元"
 }
 module.exports = {
   RMBFormat:RMBFormat
